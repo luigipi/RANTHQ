@@ -26,7 +26,7 @@ class MembersResources extends JsonResource
             "status" => $this->status,
             "created_at" => (string) $this->created_at,
             "updated_at" => (string) $this->updated_at,
-            "posts" => $this->posts,
+            "posts" => PostResources::collection($this->posts),
         ];
     }
 }

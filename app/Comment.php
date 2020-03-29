@@ -18,4 +18,8 @@ class Comment extends Model
     public function post() {
         return $this->belongsTo(Post::class);
     }
+
+    public function replies() {
+        return $this->hasMany(self::class, "parent", "id");
+    }
 }

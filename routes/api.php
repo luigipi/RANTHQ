@@ -28,6 +28,9 @@ Route::group(["prefix" => "rant"], function () {
 Route::group(["prefix" => "posts"], function () {
     Route::get("/", "PostController@index"); 
     Route::post("/new", "PostController@create"); 
+    Route::post("/{id}", "CommentController@comment");
+    Route::delete("/comment/{id}", "CommentController@delete");
+    Route::put("/comment/{id}", "CommentController@edit");
 });
 
 
